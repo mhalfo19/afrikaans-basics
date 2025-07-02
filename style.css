@@ -289,3 +289,10 @@ body {  /* styles the entire page's <body> elements */
   background-color: #e68a00;
 }
 
+.listen-hint {
+  font-size: 0.9em;
+  font-style: italic;
+  color: #888; /* light grey */
+  margin-top: -0.5em;
+  margin-bottom: 0.5em;
+}
