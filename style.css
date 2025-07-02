@@ -277,6 +277,14 @@ body {  /* styles the entire page's <body> elements */
   transition: background-color 0.3s;
 }
 
+.listen-hint {
+  font-size: 0.9em;
+  font-style: italic;
+  color: #888; /* light grey */
+  margin-top: -0.5em;
+  margin-bottom: 0.5em;
+}
+
 #lang-toggle-btn:hover {
   background-color: #e68a00;
 }
