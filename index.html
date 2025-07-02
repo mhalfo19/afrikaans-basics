@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="af">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Afrikaans Digraphs & Phrases</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>Afrikaans Basics</h1>
+
+  <div id="tabs">
+    <div class="tab active" data-tab="digraphs-tab">Digraphs & Trigraphs</div>
+    <div class="tab" data-tab="phrases-tab">Conversation Phrases</div>
+    <div class="tab" data-tab="vocab-tab">Vocab</div>
+  </div>
+
+  <div id="digraphs-tab" class="tab-content active">
+    <h2>Digraphs</h2>
+    <div id="digraph-buttons"></div>
+
+    <h2>Trigraphs</h2>
+    <div id="trigraph-buttons"></div>
+  </div>
+
+  <div id="phrases-tab" class="tab-content">
+    <h2>Conversation Phrases</h2>
+    <div id="phrases-list" class="phrase-list"></div>
+  </div>
+
+  <div id="vocab-tab" class="tab-content">
+    <h2>Vocabulary Categories</h2>
+    <div id="vocab-buttons"></div>
+  </div>
+
+  <a href="test.html" id="test-link">
+    <button id="test-button">Test Me</button>
+  </a>
+
+  <script src="audio-data.js"></script>
+  <script src="vocab.js"></script>
+  <script src="flashcards-phrases.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

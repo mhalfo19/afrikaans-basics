@@ -1,0 +1,283 @@
+body {  /* styles the entire page's <body> elements */
+    font-family: sans-serif;
+    text-align: center;
+    padding: 1em 2em 2em 2em;
+    background-color: #f3f3f3;
+  }
+  
+  h1 {
+    color: #333;
+  }
+  
+  #digraph-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1em;
+    margin-top: 2em;
+  }
+  
+  #trigraph-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1em;
+    margin-top: 2em;
+  }
+  
+  button {  /* general button styles */
+    font-size: 1.5em;
+    padding: 1em 2em;
+    border: none;
+    border-radius: 10px;
+    background-color: #4caf50;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  
+  #trigraph-buttons button {
+    background-color: #2196f3;
+  }
+  
+  #trigraph-buttons button:hover {
+    background-color: #0f85e6; /* keep same color */
+  }
+  
+  #test-button {
+    margin-top: 3em;
+    background-color: #ff9800;
+  }
+
+  #test-button:hover {
+    background-color: #e68a00;
+  }
+
+  /* Flashcard container (centers the flashcard) */
+  #flashcard-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2em;
+    margin-top: 2em;
+  }
+  
+  /* Single flashcard with flip styling */
+  .flashcard.single-card {
+    width: 300px;
+    height: 200px;
+    margin: 5em auto;
+    perspective: 1000px;
+    position: relative;
+  }
+  
+  /* Front and back card faces */
+  .flashcard.single-card .front,
+  .flashcard.single-card .back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    background-color: white;
+    border: 2px solid #ccc;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.6s;
+  }
+  
+  /* Back card face is initially flipped */
+  .flashcard.single-card .back {
+    transform: rotateY(180deg);
+  }
+  
+  /* Front flips away */
+  .flashcard.single-card.flipped .front {
+    transform: rotateY(180deg);
+  }
+  
+  /* Back flips in */
+  .flashcard.single-card.flipped .back {
+    transform: rotateY(0deg);
+    z-index: 2;
+  }
+  
+  /* Word styling */
+  .card-word {
+    font-size: 2.5em;
+    margin-bottom: 1em;
+    color: #333;
+  }
+  
+  /* Row for buttons below the word */
+  .button-row {
+    display: flex;
+    justify-content: center;
+    gap: 1.5em;
+  }
+  
+  /* Minimal icon-only buttons (for 🔊 and ✅) */
+  .icon-button {
+    font-size: 1.5em;
+    background-color: white;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    padding: 0.2em;
+    transition: transform 0.2s;
+  }
+  
+  .icon-button:hover {
+    transform: scale(1.2);
+  }
+
+  #back-arrow {
+    position: absolute;
+    top: 1em;
+    left: 1em;
+    text-decoration: none;
+    font-size: 1.2em;
+    background-color: white;
+    padding: 0.5em 1em;
+    border-radius: 8px;
+    color: #2196f3;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
+  }
+  
+  #back-arrow:hover {
+    background-color: #f0f0f0;
+  }
+
+  #mode-toggle-btn {
+    background-color: #ff9800;  /* orange */
+    color: white;
+    font-size: 1.2em;
+    padding: 0.8em 1.5em;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  #mode-toggle-btn:hover {
+    background-color: #e68a00; /* slightly darker orange on hover */
+  }
+
+  #tabs {
+    display: flex;
+    justify-content: center;
+    margin-top: 1em;
+    gap: 1em;
+  }
+  .tab {
+    padding: 0.5em 1.2em;
+    cursor: pointer;
+    border-radius: 8px 8px 0 0;
+    background-color: #eee;
+    font-weight: bold;
+    user-select: none;
+    transition: background-color 0.3s;
+  }
+  .tab.active {
+    background-color: #ff9800;
+    color: white;
+  }
+  /* Content sections */
+  .tab-content {
+    display: none;
+    margin-top: 1em;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .tab-content.active {
+    display: block;
+  }
+  /* Phrase list styles */
+  .phrase-list {
+    margin-top: 1em;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+  }
+  .phrase-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    padding: 0.5em 1em;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    font-size: 1.2em;
+  }
+  .phrase-texts {
+    flex-grow: 1;
+  }
+  .phrase-afrikaans {
+    font-weight: bold;
+    color: #333;
+  }
+  .phrase-english {
+    font-style: italic;
+    color: #666;
+    margin-left: 1em;
+  }
+  .icon-button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.3s ease;
+    padding: 0;
+    margin-left: 0.5em;
+  }
+  
+  .icon-button:hover,
+  .icon-button:focus {
+    color: #28a745; /* green */
+    outline: none;
+  }
+  
+.vocab-button {
+  background-color: #2196f3; /* Same as trigraph buttons */
+  color: white;
+  border: none;
+  padding: 0.5em 1em;
+  margin: 5px;
+  font-size: 1.5em;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.vocab-button:hover {
+  background-color: #0f85e6; /* Same as trigraph hover */
+}
+
+#lang-toggle-btn {
+  background-color: #ff9800;
+  color: white;
+  font-size: 1.1em;          /* Smaller than 1.2em */
+  padding: 1em 1em;      /* Reduced vertical & horizontal padding */
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 1em;
+  transition: background-color 0.3s;
+}
+
+#lang-toggle-btn:hover {
+  background-color: #e68a00;
+}
+
